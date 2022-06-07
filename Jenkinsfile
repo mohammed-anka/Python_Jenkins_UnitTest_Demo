@@ -1,6 +1,12 @@
 pipeline {
 	agent any
 	stages {
+		stage("start") {
+			steps {
+				echo 'starting the application'
+				git branch: 'main', url: 'https://github.com/mohammed-anka/Python_Jenkins_UnitTest_Demo.git'
+			}
+		}
 		stage("build") {
 			steps {
 				echo 'building the application'
